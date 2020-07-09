@@ -20,14 +20,13 @@
     </bean>
 
     <bean id="musicPlayer"
-          class="org.example.MusicPlayer">
+          class="org.example.MusicPlayer"
+        scope="prototype">
         <property name="musicList">
             <list>
                 <ref bean="musicBean1"/>
                 <ref bean="musicBean2"/>
                 <ref bean="musicBean3"/>
-                <ref bean="musicBean2"/>
-                <ref bean="musicBean1"/>
             </list>
         </property>
 
