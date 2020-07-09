@@ -9,7 +9,11 @@
 
     <context:property-placeholder location="musicPlayer.properties" />
 
-    <bean id="musicBean1"
+    <bean id="musicBean"
+          class="org.example.JazzRap"
+          init-method="doJazzRapInit"
+          destroy-method="doJazzRapDestroy"/>
+    <!--bean id="musicBean1"
           class="org.example.RetroWave">
     </bean>
     <bean id="musicBean2"
@@ -32,6 +36,6 @@
 
         <property name="name" value="${musicPlayer.name}" />
         <property name="volume" value="${musicPlayer.volume}" />
-    </bean>
+    </bean-->
 
 </beans>
