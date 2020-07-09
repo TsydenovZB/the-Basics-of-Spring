@@ -7,36 +7,6 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="musicPlayer.properties" />
-
-    <bean id="musicBean"
-          class="org.example.JazzRap"
-          init-method="doJazzRapInit"
-          destroy-method="doJazzRapDestroy"
-          factory-method="getJazzRap" />
-    <!--bean id="musicBean1"
-          class="org.example.RetroWave">
-    </bean>
-    <bean id="musicBean2"
-          class="org.example.Shoegaze">
-    </bean>
-    <bean id="musicBean3"
-          class="org.example.JazzRap">
-    </bean>
-
-    <bean id="musicPlayer"
-          class="org.example.MusicPlayer"
-        scope="prototype">
-        <property name="musicList">
-            <list>
-                <ref bean="musicBean1"/>
-                <ref bean="musicBean2"/>
-                <ref bean="musicBean3"/>
-            </list>
-        </property>
-
-        <property name="name" value="${musicPlayer.name}" />
-        <property name="volume" value="${musicPlayer.volume}" />
-    </bean-->
+    <context:component-scan base-package="org.example" />
 
 </beans>

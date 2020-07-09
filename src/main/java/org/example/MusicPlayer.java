@@ -1,37 +1,22 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MusicPlayer {
-    private List<Music> musicList = new ArrayList<>();
+    private Music music1;
+    private Music music2;
 
-    private String name;
-    private int volume;
-
-    public void setMusicList(List<Music> musicList) {
-        this.musicList = musicList;
+    @Autowired
+    public MusicPlayer(@Qualifier("jazzRap") Music music1, @Qualifier("retroWave") Music music2) {
+        this.music1 = music1;
+        this.music2 = music2;
     }
 
     public void playMusicList() {
-        for (Music music : musicList) {
-            System.out.println("Playing " + music.getSong());
-        }
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
+        System.out.println("Playing " + music1.getSong());
+        System.out.println("Playing " + music2.getSong());
     }
 }
